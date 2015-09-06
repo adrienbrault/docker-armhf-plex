@@ -20,6 +20,5 @@ ENV HOME=/config
 RUN find /usr/lib/plexmediaserver -name plex.js -exec sed -i -e "s/validateTranscoder:function(t,n){var/validateTranscoder:function(t,n){return false;var/g" {} \;
 
 EXPOSE 32400
-EXPOSE 3000
 
 CMD ["/usr/sbin/start_pms"]
