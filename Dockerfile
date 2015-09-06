@@ -14,6 +14,8 @@ RUN apt-get update -q && \
 
 VOLUME ["/config","/media"]
 
+ENV HOME=/config
+
 # Force plex to try transcoding
 RUN find /usr/lib/plexmediaserver -name plex.js -exec sed -i -e "s/validateTranscoder:function(t,n){var/validateTranscoder:function(t,n){return false;var/g" {} \;
 
